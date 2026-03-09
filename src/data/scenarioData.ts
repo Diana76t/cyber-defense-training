@@ -383,7 +383,7 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's3-step3',
         stepNumber: 3,
         title: 'Assessing the Damage',
-        situation: 'Reviewing your activity log, you see the attacker opened 12 emails and sent 3 emails from your account to your contacts during the 8 minutes of access. What is your priority follow-up?',
+        situation: 'Reviewing your activity log, you see the attacker opened 12 emails and sent 3 emails from your account to your contacts during the 8 minutes of access. What is the MOST urgent action to protect others?',
         choices: [
           {
             id: 'a',
