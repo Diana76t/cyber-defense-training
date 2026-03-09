@@ -155,8 +155,8 @@ export default function Dashboard() {
         {/* Recent Activity */}
         <div className="cyber-card rounded-lg p-6">
           <div className="flex items-center gap-2 mb-4"><TrendingUp className="h-4 w-4 text-primary" /><h3 className="text-sm font-bold">Recent Activity</h3></div>
-          {progress.quizHistory.length === 0 && progress.scenarioHistory.length === 0 && (progress.incidentHistory ?? []).length === 0 ? (
-            <p className="text-xs text-muted-foreground">No activity yet. Start a quiz, scenario, or incident to begin tracking your progress!</p>
+          {progress.quizHistory.length === 0 && progress.scenarioHistory.length === 0 && (progress.incidentHistory ?? []).length === 0 && (progress.socAlertHistory ?? []).length === 0 ? (
+            <p className="text-xs text-muted-foreground">No activity yet. Start a quiz, scenario, incident, or SOC alert to begin tracking your progress!</p>
           ) : (
             <div className="space-y-2 max-h-48 overflow-y-auto">
               {[...progress.quizHistory.map(r => ({ type: 'Quiz' as const, label: `${r.difficulty} Quiz`, score: r.score, max: r.maxScore, date: r.completedAt })),
