@@ -267,9 +267,9 @@ export const INCIDENTS: Incident[] = [
           },
           {
             id: 'b',
-            text: 'Just change the admin account password',
+            text: 'Only change the admin account password — that should lock out the attacker',
             isCorrect: false,
-            feedback: '⚠️ Password change alone is insufficient. The attacker may already have created backdoor accounts, exported credentials (Pass-the-Hash), or generated Kerberos Golden Tickets that remain valid even after a password change. Full containment requires session revocation + krbtgt reset.',
+            feedback: '⚠️ Password change alone is insufficient. The attacker may already have created backdoor accounts, exported credential hashes (Pass-the-Hash), or generated Kerberos Golden Tickets that remain valid even after a password change. Full containment requires session revocation + krbtgt reset.',
             points: 30,
           },
           {
