@@ -61,7 +61,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir1-step1',
         stepNumber: 1,
         title: 'Initial Containment',
-        situation: 'It\'s been 5 minutes since the phishing link was clicked. The attacker is actively logged into the employee\'s account. The employee is at their desk. What is your FIRST containment action?',
+        situation: 'It\'s been 5 minutes since the phishing link was clicked. The attacker is actively logged into the employee\'s account from an external IP. The employee is at their desk unaware. What is your FIRST containment action?',
         actions: [
           {
             id: 'a',
@@ -97,7 +97,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir1-step2',
         stepNumber: 2,
         title: 'Scope Assessment',
-        situation: 'The account is now disabled. Logs show the attacker accessed: email inbox, SharePoint /HR-Documents/, and attempted (failed) to access the finance portal. Which systems need IMMEDIATE investigation?',
+        situation: 'The account is now disabled. Logs show the attacker accessed: email inbox, SharePoint /HR-Documents/ (containing employee PII), and attempted (failed) to access the finance portal. Which scope of investigation is MOST appropriate?',
         actions: [
           {
             id: 'a',
@@ -133,7 +133,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir1-step3',
         stepNumber: 3,
         title: 'Evidence Preservation',
-        situation: 'You need to preserve evidence before IT wipes the compromised system. The employee\'s manager wants the laptop cleaned and back in service ASAP. What do you do?',
+        situation: 'You need to preserve evidence before IT wipes the compromised system. The employee\'s manager wants the laptop cleaned and back in service ASAP. What is the BEST approach to balance evidence preservation and business continuity?',
         actions: [
           {
             id: 'a',
@@ -169,7 +169,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir1-step4',
         stepNumber: 4,
         title: 'Stakeholder Notification',
-        situation: 'Evidence shows the HR Documents folder contained personal data of 340 employees (names, salaries, home addresses). Your company operates in the EU. What are your notification obligations?',
+        situation: 'Evidence shows the HR Documents folder contained personal data of 340 employees (names, salaries, home addresses). Your company operates in the EU under GDPR. What are your COMPLETE notification obligations?',
         actions: [
           {
             id: 'a',
@@ -256,7 +256,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir2-step2',
         stepNumber: 2,
         title: 'Immediate Containment',
-        situation: 'P1 declared. You have 2 minutes to execute containment before the attacker detects the investigation. The admin account has keys to 847 systems. What\'s your containment strategy?',
+        situation: 'P1 declared. You have 2 minutes to execute containment before the attacker detects the investigation. The admin account has domain admin privileges on 847 systems. What is the MOST thorough containment strategy?',
         actions: [
           {
             id: 'a',
@@ -267,9 +267,9 @@ export const INCIDENTS: Incident[] = [
           },
           {
             id: 'b',
-            text: 'Just change the admin account password',
+            text: 'Only change the admin account password — that should lock out the attacker',
             isCorrect: false,
-            feedback: '⚠️ Password change alone is insufficient. The attacker may already have created backdoor accounts, exported credentials (Pass-the-Hash), or generated Kerberos Golden Tickets that remain valid even after a password change. Full containment requires session revocation + krbtgt reset.',
+            feedback: '⚠️ Password change alone is insufficient. The attacker may already have created backdoor accounts, exported credential hashes (Pass-the-Hash), or generated Kerberos Golden Tickets that remain valid even after a password change. Full containment requires session revocation + krbtgt reset.',
             points: 30,
           },
           {
@@ -343,7 +343,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir3-step1',
         stepNumber: 1,
         title: 'Endpoint Isolation',
-        situation: 'The EDR shows active C2 communication. The malware is performing a network scan. The developer is in the middle of a critical code commit. What do you do?',
+        situation: 'The EDR shows active C2 communication and a running network scan. The developer is in the middle of a critical code commit. What is your FIRST action as the incident responder?',
         actions: [
           {
             id: 'a',
@@ -379,7 +379,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir3-step2',
         stepNumber: 2,
         title: 'Credential Compromise Assessment',
-        situation: 'The EDR confirms LSASS was read — cached credentials were almost certainly harvested. The developer has SSH access to 12 production servers and write access to the main code repository. What\'s the immediate risk?',
+        situation: 'The EDR confirms LSASS was read — cached credentials were almost certainly harvested. The developer has SSH access to 12 production servers and write access to the main code repository. What BEST describes the immediate risk?',
         actions: [
           {
             id: 'a',
@@ -415,7 +415,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir3-step3',
         stepNumber: 3,
         title: 'Source Code Integrity',
-        situation: 'The malware had access during business hours for an estimated 3 hours before detection. The code repository shows 2 commits made during that window by the developer. How do you verify code integrity?',
+        situation: 'The malware had access during business hours for an estimated 3 hours before detection. The code repository shows 2 commits made during that window by the developer. What is the MOST rigorous way to verify code integrity?',
         actions: [
           {
             id: 'a',
@@ -433,9 +433,9 @@ export const INCIDENTS: Incident[] = [
           },
           {
             id: 'c',
-            text: 'Revert all commits made during the 3-hour window to be safe',
+            text: 'Immediately revert all commits from the 3-hour window without reviewing them',
             isCorrect: false,
-            feedback: '⚠️ Blanket reverts remove potentially legitimate work without analysis. The correct approach is to verify the integrity of each commit. Reverting without analysis also fails to identify if earlier, undetected malicious commits exist.',
+            feedback: '⚠️ Blanket reverts remove potentially legitimate work without analysis and give a false sense of security. The correct approach is to verify each commit\'s integrity. Reverting without analysis also fails to identify if earlier, undetected malicious commits exist.',
             points: 35,
           },
           {
@@ -466,7 +466,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir4-step1',
         stepNumber: 1,
         title: 'Network Segmentation Emergency',
-        situation: 'Ransomware is spreading via file shares across 3 departments and accelerating. The CEO is demanding to know what\'s happening. What is your very first action as Incident Commander?',
+        situation: 'Ransomware is spreading via file shares across 3 departments and accelerating. The CEO is demanding to know what\'s happening. What is your FIRST action as Incident Commander?',
         actions: [
           {
             id: 'a',
@@ -502,7 +502,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir4-step2',
         stepNumber: 2,
         title: 'Backup Viability Assessment',
-        situation: 'Network isolated. IT reports: backups exist but the tape backups are 5 days old (predating the breach). Cloud backups sync hourly and the last sync was 40 minutes ago — before the ransomware executed. The VPN vulnerability that enabled initial access is known. What\'s the recovery strategy?',
+        situation: 'Network isolated. IT reports: tape backups are 5 days old (predating the breach). Cloud backups sync hourly and the last sync was 40 minutes ago — before the ransomware executed. The VPN vulnerability that enabled initial access 3 days ago is still unpatched. What is the BEST recovery strategy?',
         actions: [
           {
             id: 'a',
@@ -527,9 +527,9 @@ export const INCIDENTS: Incident[] = [
           },
           {
             id: 'd',
-            text: 'Restore from cloud backups immediately without changing anything else — speed is critical',
+            text: 'Restore from cloud backups as fast as possible and reconnect everything — deal with the VPN patch later',
             isCorrect: false,
-            feedback: '❌ Restoring without patching the VPN vulnerability means you restore into an already-compromised environment. The attackers still have their initial access vector and can re-deploy ransomware. The VPN patch is a prerequisite, not optional.',
+            feedback: '❌ Restoring without patching the VPN vulnerability first means you\'re restoring into an already-compromised environment. The attackers still have their initial access vector and can re-deploy ransomware within hours. The VPN patch is a prerequisite, not optional.',
             points: 15,
           },
         ],
@@ -589,7 +589,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir5-step1',
         stepNumber: 1,
         title: 'Verify the Disclosure',
-        situation: 'A researcher claims your data is on the dark web. You\'ve verified 5 sample records. Is this a confirmed breach? What\'s your immediate next step?',
+        situation: 'A researcher claims your customer data is on the dark web. You\'ve verified 5 sample records match your database exactly. What is your CORRECT immediate response?',
         actions: [
           {
             id: 'a',
@@ -625,7 +625,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir5-step2',
         stepNumber: 2,
         title: 'Customer Risk Assessment',
-        situation: 'The breach includes hashed passwords. Initial analysis shows MD5 hashing was used (known to be weak). What is the immediate customer risk and required action?',
+        situation: 'The breach includes hashed passwords. Initial analysis shows MD5 hashing was used (known to be trivially crackable). What is the BEST immediate action to protect customers?',
         actions: [
           {
             id: 'a',
@@ -712,7 +712,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir6-step1',
         stepNumber: 1,
         title: 'Initial Response — Insider Threat',
-        situation: 'The DLP alerts are confirmed. Mike is still in the building. What is the correct initial response? Note: Mike has not formally been terminated yet.',
+        situation: 'The DLP alerts are confirmed and Mike is actively exfiltrating data. He is still in the building and has not been formally terminated yet. What is the correct FIRST response?',
         actions: [
           {
             id: 'a',
@@ -784,13 +784,13 @@ export const INCIDENTS: Incident[] = [
         id: 'ir6-step3',
         stepNumber: 3,
         title: 'Prevention and Lessons Learned',
-        situation: 'The incident is contained. The CRM export contained 8,400 customer contacts. Which controls would have BEST prevented or detected this earlier?',
+        situation: 'The incident is contained. Mike used Google Drive, email forwarding, and a CRM CSV export to steal 8,400 customer contacts. Which combination of controls would have BEST prevented or detected this earlier?',
         actions: [
           {
             id: 'a',
-            text: 'Physical locks on USB ports company-wide',
+            text: 'Install physical locks on all USB ports company-wide',
             isCorrect: false,
-            feedback: '⚠️ USB locks help but Mike used cloud services and email — not USB. Single-vector prevention doesn\'t address multi-channel exfiltration. A comprehensive data protection strategy requires DLP + access controls + monitoring.',
+            feedback: '⚠️ USB locks are irrelevant here — Mike used cloud services and email, not USB drives. Single-vector prevention doesn\'t address multi-channel exfiltration. A comprehensive data protection strategy requires DLP + access controls + monitoring across all channels.',
             points: 15,
           },
           {

@@ -50,7 +50,7 @@ export const SCENARIOS: Scenario[] = [
         id: 's1-step1',
         stepNumber: 1,
         title: 'The Suspicious Email',
-        situation: 'You receive the following email. What do you do?',
+        situation: 'You receive the following email. What is your FIRST step before taking any action?',
         emailContent: {
           from: 'security@paypa1-support.com',
           to: 'you@company.com',
@@ -139,13 +139,13 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's1-step3',
         stepNumber: 3,
         title: 'Taking the Right Action',
-        situation: 'You\'ve confirmed this is a phishing email. You also realize you reuse the same password on PayPal, your email, and two other sites. What\'s your priority action?',
+        situation: 'You\'ve confirmed this is a phishing email. You also realize you reuse the same password on PayPal, your email, and two other sites. What is the MOST comprehensive action you should take?',
         choices: [
           {
             id: 'a',
-            text: 'Report the phishing email to IT and change only your PayPal password',
+            text: 'Report the phishing email to IT but only change your PayPal password since that was the targeted account',
             isCorrect: false,
-            feedback: '⚠️ Reporting is great, but password reuse is your biggest vulnerability. Attackers use "credential stuffing" — automatically trying stolen passwords on other sites like banks and email.',
+            feedback: '⚠️ Reporting is great, but changing only the PayPal password leaves your other accounts wide open. Since you reuse the same password, attackers will use "credential stuffing" — automatically trying stolen passwords on your email, bank, and every other site.',
             points: 45,
           },
           {
@@ -311,7 +311,7 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's3-step1',
         stepNumber: 1,
         title: 'The Security Alert',
-        situation: 'Your phone shows: "New sign-in to your account from Bucharest, Romania (IP: 185.220.xxx.xxx) at 3:14 AM. If this wasn\'t you, click here to secure your account."\n\nYou\'ve never been to Romania. What do you do?',
+        situation: 'Your phone shows: "New sign-in to your account from Bucharest, Romania (IP: 185.220.xxx.xxx) at 3:14 AM. If this wasn\'t you, click here to secure your account."\n\nYou\'ve never been to Romania. What is the SAFEST immediate response?',
         choices: [
           {
             id: 'a',
@@ -347,7 +347,7 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's3-step2',
         stepNumber: 2,
         title: 'Password Changed — What Next?',
-        situation: 'You\'ve successfully changed your password. The unauthorized session shows the attacker accessed your email for about 8 minutes. What should you do next?',
+        situation: 'You\'ve successfully changed your password. The unauthorized session shows the attacker accessed your email for about 8 minutes. What is the MOST complete set of follow-up actions?',
         choices: [
           {
             id: 'a',
@@ -365,9 +365,9 @@ Failure to respond will result in loss of access and pending transactions being 
           },
           {
             id: 'c',
-            text: 'Enable 2FA only',
+            text: 'Enable 2FA only — that should prevent future unauthorized access',
             isCorrect: false,
-            feedback: '⚠️ Enabling 2FA is essential, but you also need to sign out all active sessions (the attacker may still be connected) and audit what they accessed during those 8 minutes.',
+            feedback: '⚠️ 2FA alone is incomplete. The attacker may still have an active session right now — 2FA only protects future logins, not existing sessions. You must also sign out all sessions and audit what was accessed during those 8 minutes.',
             points: 50,
           },
           {
@@ -383,7 +383,7 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's3-step3',
         stepNumber: 3,
         title: 'Assessing the Damage',
-        situation: 'Reviewing your activity log, you see the attacker opened 12 emails and sent 3 emails from your account to your contacts during the 8 minutes of access. What is your priority follow-up?',
+        situation: 'Reviewing your activity log, you see the attacker opened 12 emails and sent 3 emails from your account to your contacts during the 8 minutes of access. What is the MOST urgent action to protect others?',
         choices: [
           {
             id: 'a',
@@ -401,9 +401,9 @@ Failure to respond will result in loss of access and pending transactions being 
           },
           {
             id: 'c',
-            text: 'Check if any sensitive emails were read',
+            text: 'Quietly review which of your own emails were read before telling anyone',
             isCorrect: false,
-            feedback: '⚠️ Auditing what was accessed is important, but warning your contacts who received the attacker\'s emails is the most urgent action — they could be getting phished right now.',
+            feedback: '⚠️ Auditing your own inbox matters, but it doesn\'t protect others. Your contacts already received malicious emails from your trusted address — they could be clicking phishing links right now. Warning them is far more urgent than reviewing your own exposure.',
             points: 40,
           },
           {
@@ -433,7 +433,7 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's4-step1',
         stepNumber: 1,
         title: 'Something Feels Off',
-        situation: 'The page looks exactly like your bank\'s website. The logo is correct, the layout matches, even the "security tips" sidebar is there. Before logging in, what do you check first?',
+        situation: 'The page looks exactly like your bank\'s website. The logo is correct, the layout matches, even the "security tips" sidebar is there. What is the MOST reliable way to verify this site is legitimate?',
         choices: [
           {
             id: 'a',
@@ -505,7 +505,7 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's4-step3',
         stepNumber: 3,
         title: 'You Already Logged In',
-        situation: 'Scenario twist: A colleague admits they already entered their full credentials on this fake site before realizing. What should they do RIGHT NOW?',
+        situation: 'Scenario twist: A colleague admits they already entered their full banking credentials on this fake site before realizing. What is their FIRST priority action?',
         choices: [
           {
             id: 'a',
@@ -555,7 +555,7 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's5-step1',
         stepNumber: 1,
         title: 'The Convincing Caller',
-        situation: '"Hi [Your Name], this is Marcus from IT Security. We\'re responding to a critical incident — your machine is actively exfiltrating data to an external server. Your manager Sarah is already aware. I need your current password to remote into your machine immediately and stop the breach. This is time-sensitive."\n\nWhat do you do?',
+        situation: '"Hi [Your Name], this is Marcus from IT Security. We\'re responding to a critical incident — your machine is actively exfiltrating data to an external server. Your manager Sarah is already aware. I need your current password to remote into your machine immediately and stop the breach. This is time-sensitive."\n\nWhat is the BEST immediate response?',
         choices: [
           {
             id: 'a',
