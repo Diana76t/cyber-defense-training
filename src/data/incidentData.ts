@@ -589,7 +589,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir5-step1',
         stepNumber: 1,
         title: 'Verify the Disclosure',
-        situation: 'A researcher claims your data is on the dark web. You\'ve verified 5 sample records. Is this a confirmed breach? What\'s your immediate next step?',
+        situation: 'A researcher claims your customer data is on the dark web. You\'ve verified 5 sample records match your database exactly. What is your CORRECT immediate response?',
         actions: [
           {
             id: 'a',
