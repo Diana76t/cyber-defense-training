@@ -343,7 +343,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir3-step1',
         stepNumber: 1,
         title: 'Endpoint Isolation',
-        situation: 'The EDR shows active C2 communication. The malware is performing a network scan. The developer is in the middle of a critical code commit. What do you do?',
+        situation: 'The EDR shows active C2 communication and a running network scan. The developer is in the middle of a critical code commit. What is your FIRST action as the incident responder?',
         actions: [
           {
             id: 'a',
