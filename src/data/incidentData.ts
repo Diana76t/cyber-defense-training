@@ -712,7 +712,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir6-step1',
         stepNumber: 1,
         title: 'Initial Response — Insider Threat',
-        situation: 'The DLP alerts are confirmed. Mike is still in the building. What is the correct initial response? Note: Mike has not formally been terminated yet.',
+        situation: 'The DLP alerts are confirmed and Mike is actively exfiltrating data. He is still in the building and has not been formally terminated yet. What is the correct FIRST response?',
         actions: [
           {
             id: 'a',
