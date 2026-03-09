@@ -610,9 +610,9 @@ Failure to respond will result in loss of access and pending transactions being 
           {
             id: 'c',
             text: 'Text your manager Sarah to ask if this IT request is real',
-            isCorrect: true,
-            feedback: '✅ Good thinking! Verifying through a separate channel (texting Sarah directly) is exactly the right approach. If Sarah confirms, you can cooperate. If not, you\'ve prevented an attack and can report it.',
-            points: 90,
+            isCorrect: false,
+            feedback: '⚠️ Reaching out to Sarah seems reasonable, but the attacker already knows her name — they may have compromised her phone or be impersonating her too. The safest method is always calling back on the official, published IT helpdesk number.',
+            points: 35,
           },
           {
             id: 'd',
