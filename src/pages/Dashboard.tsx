@@ -9,10 +9,11 @@ import { INCIDENTS } from '@/data/incidentData';
 import { DIFFICULTY_CONFIG, type Difficulty } from '@/data/quizData';
 
 export default function Dashboard() {
-  const { progress, level, updateUsername, resetProgress, getCompletedDifficulties, getCompletedScenarioIds, getBestScoreForDifficulty, getBestScoreForScenario } = useUserProgress();
+  const { progress, level, updateUsername, resetProgress, getCompletedDifficulties, getCompletedScenarioIds, getCompletedIncidentIds, getBestScoreForDifficulty, getBestScoreForScenario, getBestScoreForIncident } = useUserProgress();
   const levelProg = getLevelProgress(progress.totalScore);
   const completedDiffs = getCompletedDifficulties();
   const completedScenarios = getCompletedScenarioIds();
+  const completedIncidents = getCompletedIncidentIds();
   const nextLevel = LEVELS.find(l => l.minScore > progress.totalScore);
 
   return (
