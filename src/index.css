@@ -1,96 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 219 55% 4%;
+    --foreground: 195 60% 90%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 219 48% 7%;
+    --card-foreground: 195 60% 90%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 219 48% 7%;
+    --popover-foreground: 195 60% 90%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 182 100% 42%;
+    --primary-foreground: 219 55% 4%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 219 38% 13%;
+    --secondary-foreground: 195 60% 90%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 219 38% 11%;
+    --muted-foreground: 215 25% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 152 80% 48%;
+    --accent-foreground: 219 55% 4%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 85% 58%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 219 30% 16%;
+    --input: 219 38% 13%;
+    --ring: 182 100% 42%;
 
-    --radius: 0.5rem;
+    --radius: 0.375rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom cyber tokens */
+    --warning: 38 95% 55%;
+    --warning-foreground: 219 55% 4%;
+    --success: 152 80% 48%;
+    --success-foreground: 219 55% 4%;
+    --danger: 0 85% 58%;
+    --danger-foreground: 0 0% 98%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Glow effects */
+    --glow-primary: 0 0 20px hsl(182 100% 42% / 0.4), 0 0 40px hsl(182 100% 42% / 0.15);
+    --glow-success: 0 0 20px hsl(152 80% 48% / 0.4), 0 0 40px hsl(152 80% 48% / 0.15);
+    --glow-danger: 0 0 20px hsl(0 85% 58% / 0.4), 0 0 40px hsl(0 85% 58% / 0.15);
+    --glow-warning: 0 0 20px hsl(38 95% 55% / 0.4);
 
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar */
+    --sidebar-background: 219 50% 5%;
+    --sidebar-foreground: 195 60% 90%;
+    --sidebar-primary: 182 100% 42%;
+    --sidebar-primary-foreground: 219 55% 4%;
+    --sidebar-accent: 219 38% 13%;
+    --sidebar-accent-foreground: 195 60% 90%;
+    --sidebar-border: 219 30% 16%;
+    --sidebar-ring: 182 100% 42%;
   }
 }
 
@@ -101,5 +69,236 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Rajdhani', system-ui, sans-serif;
   }
+
+  h1, h2, h3 {
+    font-family: 'Orbitron', monospace;
+  }
+}
+
+/* ========================================
+   CUSTOM UTILITY CLASSES
+   ======================================== */
+
+.font-display {
+  font-family: 'Orbitron', monospace;
+}
+
+.font-terminal {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+/* ========================================
+   CYBER GRID BACKGROUND
+   ======================================== */
+
+.cyber-grid {
+  background-image:
+    linear-gradient(hsl(182 100% 42% / 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(182 100% 42% / 0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* ========================================
+   GLOW UTILITIES
+   ======================================== */
+
+.glow-primary {
+  box-shadow: var(--glow-primary);
+}
+
+.glow-success {
+  box-shadow: var(--glow-success);
+}
+
+.glow-danger {
+  box-shadow: var(--glow-danger);
+}
+
+.glow-warning {
+  box-shadow: var(--glow-warning);
+}
+
+.text-glow-primary {
+  text-shadow: 0 0 10px hsl(var(--primary)), 0 0 25px hsl(var(--primary) / 0.5);
+}
+
+.text-glow-success {
+  text-shadow: 0 0 10px hsl(var(--accent)), 0 0 25px hsl(var(--accent) / 0.5);
+}
+
+.text-glow-danger {
+  text-shadow: 0 0 10px hsl(var(--destructive)), 0 0 25px hsl(var(--destructive) / 0.4);
+}
+
+/* ========================================
+   CYBER CARD
+   ======================================== */
+
+.cyber-card {
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  right: -100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.6), transparent);
+  animation: scan-top 4s ease-in-out infinite;
+}
+
+/* ========================================
+   PROGRESS BAR
+   ======================================== */
+
+.cyber-progress {
+  height: 4px;
+  background: hsl(var(--muted));
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.cyber-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
+  box-shadow: 0 0 8px hsl(var(--primary) / 0.7);
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes scan-top {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes cyber-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes terminal-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-cyber-pulse {
+  animation: cyber-pulse 2s ease-in-out infinite;
+}
+
+.animate-terminal-blink {
+  animation: terminal-blink 1s step-end infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ========================================
+   TERMINAL CURSOR
+   ======================================== */
+
+.terminal-cursor::after {
+  content: '█';
+  animation: terminal-blink 1s step-end infinite;
+  color: hsl(var(--primary));
+  margin-left: 2px;
+}
+
+/* ========================================
+   SCAN LINES OVERLAY
+   ======================================== */
+
+.scan-lines {
+  position: relative;
+}
+
+.scan-lines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    hsl(var(--background) / 0.015) 2px,
+    hsl(var(--background) / 0.015) 4px
+  );
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* ========================================
+   EMAIL VIEWER
+   ======================================== */
+
+.email-viewer {
+  background: hsl(219 48% 6%);
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* ========================================
+   CHOICE BUTTON STATES
+   ======================================== */
+
+.choice-correct {
+  border-color: hsl(var(--accent)) !important;
+  background: hsl(var(--accent) / 0.1) !important;
+  box-shadow: var(--glow-success);
+}
+
+.choice-wrong {
+  border-color: hsl(var(--destructive)) !important;
+  background: hsl(var(--destructive) / 0.1) !important;
+  box-shadow: var(--glow-danger);
+}
+
+.choice-neutral {
+  opacity: 0.4;
+}
+
+/* ========================================
+   SCROLLBAR
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
 }
