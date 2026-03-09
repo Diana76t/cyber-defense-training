@@ -505,7 +505,7 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's4-step3',
         stepNumber: 3,
         title: 'You Already Logged In',
-        situation: 'Scenario twist: A colleague admits they already entered their full credentials on this fake site before realizing. What should they do RIGHT NOW?',
+        situation: 'Scenario twist: A colleague admits they already entered their full banking credentials on this fake site before realizing. What is their FIRST priority action?',
         choices: [
           {
             id: 'a',
