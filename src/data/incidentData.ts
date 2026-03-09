@@ -466,7 +466,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir4-step1',
         stepNumber: 1,
         title: 'Network Segmentation Emergency',
-        situation: 'Ransomware is spreading via file shares across 3 departments and accelerating. The CEO is demanding to know what\'s happening. What is your very first action as Incident Commander?',
+        situation: 'Ransomware is spreading via file shares across 3 departments and accelerating. The CEO is demanding to know what\'s happening. What is your FIRST action as Incident Commander?',
         actions: [
           {
             id: 'a',
