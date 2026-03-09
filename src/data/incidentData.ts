@@ -61,7 +61,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir1-step1',
         stepNumber: 1,
         title: 'Initial Containment',
-        situation: 'It\'s been 5 minutes since the phishing link was clicked. The attacker is actively logged into the employee\'s account. The employee is at their desk. What is your FIRST containment action?',
+        situation: 'It\'s been 5 minutes since the phishing link was clicked. The attacker is actively logged into the employee\'s account from an external IP. The employee is at their desk unaware. What is your FIRST containment action?',
         actions: [
           {
             id: 'a',
