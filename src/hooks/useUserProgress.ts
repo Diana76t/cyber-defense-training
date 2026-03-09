@@ -19,11 +19,21 @@ export interface ScenarioResult {
   completedAt: string;
 }
 
+export interface IncidentResult {
+  id: string;
+  incidentId: string;
+  incidentTitle: string;
+  score: number;
+  maxScore: number;
+  completedAt: string;
+}
+
 export interface UserProgress {
   username: string;
   totalScore: number;
   quizHistory: QuizResult[];
   scenarioHistory: ScenarioResult[];
+  incidentHistory: IncidentResult[];
 }
 
 const STORAGE_KEY = 'cda_user_progress';
@@ -33,6 +43,7 @@ const DEFAULT_PROGRESS: UserProgress = {
   totalScore: 0,
   quizHistory: [],
   scenarioHistory: [],
+  incidentHistory: [],
 };
 
 function loadProgress(): UserProgress {
@@ -86,6 +97,17 @@ export function useUserProgress() {
     });
   }, [update]);
 
+  const addIncidentResult = useCallback((result: Omit<IncidentResult, 'id'>) => {
+    update((p) => {
+      const newResult: IncidentResult = { ...result, id: `incident-${Date.now()}` };
+      return {
+        ...p,
+        totalScore: p.totalScore + result.score,
+        incidentHistory: [newResult, ...(p.incidentHistory ?? [])],
+      };
+    });
+  }, [update]);
+
   const resetProgress = useCallback(() => {
     const fresh = { ...DEFAULT_PROGRESS };
     saveProgress(fresh);
@@ -104,6 +126,10 @@ export function useUserProgress() {
     return [...new Set(progress.scenarioHistory.map((r) => r.scenarioId))];
   };
 
+  const getCompletedIncidentIds = (): string[] => {
+    return [...new Set((progress.incidentHistory ?? []).map((r) => r.incidentId))];
+  };
+
   const getBestScoreForDifficulty = (difficulty: Difficulty): number => {
     const results = progress.quizHistory.filter((r) => r.difficulty === difficulty);
     if (!results.length) return 0;
@@ -116,16 +142,25 @@ export function useUserProgress() {
     return Math.max(...results.map((r) => r.score));
   };
 
+  const getBestScoreForIncident = (incidentId: string): number => {
+    const results = (progress.incidentHistory ?? []).filter((r) => r.incidentId === incidentId);
+    if (!results.length) return 0;
+    return Math.max(...results.map((r) => r.score));
+  };
+
   return {
     progress,
     level,
     updateUsername,
     addQuizResult,
     addScenarioResult,
+    addIncidentResult,
     resetProgress,
     getCompletedDifficulties,
     getCompletedScenarioIds,
+    getCompletedIncidentIds,
     getBestScoreForDifficulty,
     getBestScoreForScenario,
+    getBestScoreForIncident,
   };
 }

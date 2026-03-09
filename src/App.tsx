@@ -10,6 +10,8 @@ import Tips from "./pages/Tips";
 import Lab from "./pages/Lab";
 import ScenarioPage from "./pages/ScenarioPage";
 import Leaderboard from "./pages/Leaderboard";
+import IncidentLab from "./pages/IncidentLab";
+import IncidentPage from "./pages/IncidentPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
