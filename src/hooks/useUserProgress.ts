@@ -152,6 +152,10 @@ export function useUserProgress() {
     return [...new Set((progress.incidentHistory ?? []).map((r) => r.incidentId))];
   };
 
+  const getCompletedSocAlertIds = (): string[] => {
+    return [...new Set((progress.socAlertHistory ?? []).map((r) => r.socAlertId))];
+  };
+
   const getBestScoreForDifficulty = (difficulty: Difficulty): number => {
     const results = progress.quizHistory.filter((r) => r.difficulty === difficulty);
     if (!results.length) return 0;
