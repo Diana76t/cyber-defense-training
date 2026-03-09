@@ -139,7 +139,7 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's1-step3',
         stepNumber: 3,
         title: 'Taking the Right Action',
-        situation: 'You\'ve confirmed this is a phishing email. You also realize you reuse the same password on PayPal, your email, and two other sites. What\'s your priority action?',
+        situation: 'You\'ve confirmed this is a phishing email. You also realize you reuse the same password on PayPal, your email, and two other sites. What is the MOST comprehensive action you should take?',
         choices: [
           {
             id: 'a',
