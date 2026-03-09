@@ -433,7 +433,7 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's4-step1',
         stepNumber: 1,
         title: 'Something Feels Off',
-        situation: 'The page looks exactly like your bank\'s website. The logo is correct, the layout matches, even the "security tips" sidebar is there. Before logging in, what do you check first?',
+        situation: 'The page looks exactly like your bank\'s website. The logo is correct, the layout matches, even the "security tips" sidebar is there. What is the MOST reliable way to verify this site is legitimate?',
         choices: [
           {
             id: 'a',
