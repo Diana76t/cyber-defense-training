@@ -256,7 +256,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir2-step2',
         stepNumber: 2,
         title: 'Immediate Containment',
-        situation: 'P1 declared. You have 2 minutes to execute containment before the attacker detects the investigation. The admin account has keys to 847 systems. What\'s your containment strategy?',
+        situation: 'P1 declared. You have 2 minutes to execute containment before the attacker detects the investigation. The admin account has domain admin privileges on 847 systems. What is the MOST thorough containment strategy?',
         actions: [
           {
             id: 'a',
