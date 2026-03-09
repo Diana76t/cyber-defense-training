@@ -119,6 +119,17 @@ export function useUserProgress() {
     });
   }, [update]);
 
+  const addSocAlertResult = useCallback((result: Omit<SocAlertResult, 'id'>) => {
+    update((p) => {
+      const newResult: SocAlertResult = { ...result, id: `soc-${Date.now()}` };
+      return {
+        ...p,
+        totalScore: p.totalScore + result.score,
+        socAlertHistory: [newResult, ...(p.socAlertHistory ?? [])],
+      };
+    });
+  }, [update]);
+
   const resetProgress = useCallback(() => {
     const fresh = { ...DEFAULT_PROGRESS };
     saveProgress(fresh);
