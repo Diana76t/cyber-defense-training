@@ -50,7 +50,7 @@ export const SCENARIOS: Scenario[] = [
         id: 's1-step1',
         stepNumber: 1,
         title: 'The Suspicious Email',
-        situation: 'You receive the following email. What do you do?',
+        situation: 'You receive the following email. What is your FIRST step before taking any action?',
         emailContent: {
           from: 'security@paypa1-support.com',
           to: 'you@company.com',
