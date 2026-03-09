@@ -784,7 +784,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir6-step3',
         stepNumber: 3,
         title: 'Prevention and Lessons Learned',
-        situation: 'The incident is contained. The CRM export contained 8,400 customer contacts. Which controls would have BEST prevented or detected this earlier?',
+        situation: 'The incident is contained. Mike used Google Drive, email forwarding, and a CRM CSV export to steal 8,400 customer contacts. Which combination of controls would have BEST prevented or detected this earlier?',
         actions: [
           {
             id: 'a',
