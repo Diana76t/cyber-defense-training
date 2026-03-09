@@ -225,7 +225,7 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's2-step2',
         stepNumber: 2,
         title: 'Reporting to IT Security',
-        situation: 'You\'ve disconnected the machine. IT Security is on the phone. What information should you give them first?',
+        situation: 'You\'ve disconnected the machine. IT Security is on the phone. What is the MOST useful information to provide them FIRST?',
         choices: [
           {
             id: 'a',
