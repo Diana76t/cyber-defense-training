@@ -184,6 +184,7 @@ export default function Dashboard() {
           <Link to="/quiz" className="px-4 py-2 rounded bg-primary/10 border border-primary/20 text-primary text-xs font-bold hover:bg-primary/20 transition-colors">Quiz →</Link>
           <Link to="/lab" className="px-4 py-2 rounded bg-accent/10 border border-accent/20 text-accent text-xs font-bold hover:bg-accent/20 transition-colors">Sim Lab →</Link>
           <Link to="/incident" className="px-4 py-2 rounded bg-destructive/10 border border-destructive/20 text-destructive text-xs font-bold hover:bg-destructive/20 transition-colors"><Siren className="h-3 w-3 inline mr-1" />IR Lab →</Link>
+          <Link to="/soc" className="px-4 py-2 rounded bg-blue-400/10 border border-blue-400/20 text-blue-400 text-xs font-bold hover:bg-blue-400/20 transition-colors"><Search className="h-3 w-3 inline mr-1" />SOC Lab →</Link>
           <Link to="/leaderboard" className="px-4 py-2 rounded bg-warning/10 border border-warning/20 text-warning text-xs font-bold hover:bg-warning/20 transition-colors"><Trophy className="h-3 w-3 inline mr-1" />Leaderboard →</Link>
         </div>
       </div>
