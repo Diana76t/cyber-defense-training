@@ -627,7 +627,7 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's5-step3',
         stepNumber: 3,
         title: 'Reporting the Incident',
-        situation: 'You hung up and verified — IT confirms they made no such call. You\'ve been targeted by a vishing (voice phishing) attack. What should you do now?',
+        situation: 'You hung up and verified — IT confirms they made no such call. You\'ve been targeted by a vishing (voice phishing) attack. What is the BEST next step?',
         choices: [
           {
             id: 'a',
