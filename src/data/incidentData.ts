@@ -433,9 +433,9 @@ export const INCIDENTS: Incident[] = [
           },
           {
             id: 'c',
-            text: 'Revert all commits made during the 3-hour window to be safe',
+            text: 'Immediately revert all commits from the 3-hour window without reviewing them',
             isCorrect: false,
-            feedback: '⚠️ Blanket reverts remove potentially legitimate work without analysis. The correct approach is to verify the integrity of each commit. Reverting without analysis also fails to identify if earlier, undetected malicious commits exist.',
+            feedback: '⚠️ Blanket reverts remove potentially legitimate work without analysis and give a false sense of security. The correct approach is to verify each commit\'s integrity. Reverting without analysis also fails to identify if earlier, undetected malicious commits exist.',
             points: 35,
           },
           {
