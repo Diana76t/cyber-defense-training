@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Target, BookOpen, Trophy, TrendingUp, RotateCcw } from 'lucide-react';
+import { Target, BookOpen, Trophy, TrendingUp, RotateCcw, Siren } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import { useUserProgress } from '@/hooks/useUserProgress';
 import { getLevelProgress, LEVELS } from '@/data/leaderboardData';
 import { SCENARIOS } from '@/data/scenarioData';
+import { INCIDENTS } from '@/data/incidentData';
 import { DIFFICULTY_CONFIG, type Difficulty } from '@/data/quizData';
 
 export default function Dashboard() {
