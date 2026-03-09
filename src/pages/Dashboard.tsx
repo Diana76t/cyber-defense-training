@@ -1,19 +1,21 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Target, BookOpen, Trophy, TrendingUp, RotateCcw, Siren } from 'lucide-react';
+import { Target, BookOpen, Trophy, TrendingUp, RotateCcw, Siren, Search } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import { useUserProgress } from '@/hooks/useUserProgress';
 import { getLevelProgress, LEVELS } from '@/data/leaderboardData';
 import { SCENARIOS } from '@/data/scenarioData';
 import { INCIDENTS } from '@/data/incidentData';
+import { SOC_ALERTS } from '@/data/socAlertData';
 import { DIFFICULTY_CONFIG, type Difficulty } from '@/data/quizData';
 
 export default function Dashboard() {
-  const { progress, level, updateUsername, resetProgress, getCompletedDifficulties, getCompletedScenarioIds, getCompletedIncidentIds, getBestScoreForDifficulty, getBestScoreForScenario, getBestScoreForIncident } = useUserProgress();
+  const { progress, level, updateUsername, resetProgress, getCompletedDifficulties, getCompletedScenarioIds, getCompletedIncidentIds, getCompletedSocAlertIds, getBestScoreForDifficulty, getBestScoreForScenario, getBestScoreForIncident, getBestScoreForSocAlert } = useUserProgress();
   const levelProg = getLevelProgress(progress.totalScore);
   const completedDiffs = getCompletedDifficulties();
   const completedScenarios = getCompletedScenarioIds();
   const completedIncidents = getCompletedIncidentIds();
+  const completedSocAlerts = getCompletedSocAlertIds();
   const nextLevel = LEVELS.find(l => l.minScore > progress.totalScore);
 
   return (
