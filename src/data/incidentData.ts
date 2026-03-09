@@ -502,7 +502,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir4-step2',
         stepNumber: 2,
         title: 'Backup Viability Assessment',
-        situation: 'Network isolated. IT reports: backups exist but the tape backups are 5 days old (predating the breach). Cloud backups sync hourly and the last sync was 40 minutes ago — before the ransomware executed. The VPN vulnerability that enabled initial access is known. What\'s the recovery strategy?',
+        situation: 'Network isolated. IT reports: tape backups are 5 days old (predating the breach). Cloud backups sync hourly and the last sync was 40 minutes ago — before the ransomware executed. The VPN vulnerability that enabled initial access 3 days ago is still unpatched. What is the BEST recovery strategy?',
         actions: [
           {
             id: 'a',
