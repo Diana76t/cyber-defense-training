@@ -401,9 +401,9 @@ Failure to respond will result in loss of access and pending transactions being 
           },
           {
             id: 'c',
-            text: 'Check if any sensitive emails were read',
+            text: 'Quietly review which of your own emails were read before telling anyone',
             isCorrect: false,
-            feedback: '⚠️ Auditing what was accessed is important, but warning your contacts who received the attacker\'s emails is the most urgent action — they could be getting phished right now.',
+            feedback: '⚠️ Auditing your own inbox matters, but it doesn\'t protect others. Your contacts already received malicious emails from your trusted address — they could be clicking phishing links right now. Warning them is far more urgent than reviewing your own exposure.',
             points: 40,
           },
           {
