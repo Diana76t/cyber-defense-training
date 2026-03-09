@@ -143,9 +143,9 @@ Failure to respond will result in loss of access and pending transactions being 
         choices: [
           {
             id: 'a',
-            text: 'Report the phishing email to IT and change only your PayPal password',
+            text: 'Report the phishing email to IT but only change your PayPal password since that was the targeted account',
             isCorrect: false,
-            feedback: '⚠️ Reporting is great, but password reuse is your biggest vulnerability. Attackers use "credential stuffing" — automatically trying stolen passwords on other sites like banks and email.',
+            feedback: '⚠️ Reporting is great, but changing only the PayPal password leaves your other accounts wide open. Since you reuse the same password, attackers will use "credential stuffing" — automatically trying stolen passwords on your email, bank, and every other site.',
             points: 45,
           },
           {
