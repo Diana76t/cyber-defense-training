@@ -591,7 +591,7 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's5-step2',
         stepNumber: 2,
         title: 'Escalating Pressure',
-        situation: 'You say you\'ll call back. The caller says: "There\'s no time — every second of delay means more data is being stolen. Your manager Sarah will hear about your non-cooperation during a security incident. I just need your password for 5 minutes."\n\nHow do you respond?',
+        situation: 'You say you\'ll call back. The caller says: "There\'s no time — every second of delay means more data is being stolen. Your manager Sarah will hear about your non-cooperation during a security incident. I just need your password for 5 minutes."\n\nWhat is the BEST way to handle this pressure?',
         choices: [
           {
             id: 'a',
