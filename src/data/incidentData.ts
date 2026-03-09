@@ -527,9 +527,9 @@ export const INCIDENTS: Incident[] = [
           },
           {
             id: 'd',
-            text: 'Restore from cloud backups immediately without changing anything else — speed is critical',
+            text: 'Restore from cloud backups as fast as possible and reconnect everything — deal with the VPN patch later',
             isCorrect: false,
-            feedback: '❌ Restoring without patching the VPN vulnerability means you restore into an already-compromised environment. The attackers still have their initial access vector and can re-deploy ransomware. The VPN patch is a prerequisite, not optional.',
+            feedback: '❌ Restoring without patching the VPN vulnerability first means you\'re restoring into an already-compromised environment. The attackers still have their initial access vector and can re-deploy ransomware within hours. The VPN patch is a prerequisite, not optional.',
             points: 15,
           },
         ],
