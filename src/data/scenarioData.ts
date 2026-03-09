@@ -555,7 +555,7 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's5-step1',
         stepNumber: 1,
         title: 'The Convincing Caller',
-        situation: '"Hi [Your Name], this is Marcus from IT Security. We\'re responding to a critical incident — your machine is actively exfiltrating data to an external server. Your manager Sarah is already aware. I need your current password to remote into your machine immediately and stop the breach. This is time-sensitive."\n\nWhat do you do?',
+        situation: '"Hi [Your Name], this is Marcus from IT Security. We\'re responding to a critical incident — your machine is actively exfiltrating data to an external server. Your manager Sarah is already aware. I need your current password to remote into your machine immediately and stop the breach. This is time-sensitive."\n\nWhat is the BEST immediate response?',
         choices: [
           {
             id: 'a',
