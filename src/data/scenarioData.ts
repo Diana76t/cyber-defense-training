@@ -347,7 +347,7 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's3-step2',
         stepNumber: 2,
         title: 'Password Changed — What Next?',
-        situation: 'You\'ve successfully changed your password. The unauthorized session shows the attacker accessed your email for about 8 minutes. What should you do next?',
+        situation: 'You\'ve successfully changed your password. The unauthorized session shows the attacker accessed your email for about 8 minutes. What is the MOST complete set of follow-up actions?',
         choices: [
           {
             id: 'a',
