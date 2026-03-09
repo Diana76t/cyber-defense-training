@@ -133,7 +133,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir1-step3',
         stepNumber: 3,
         title: 'Evidence Preservation',
-        situation: 'You need to preserve evidence before IT wipes the compromised system. The employee\'s manager wants the laptop cleaned and back in service ASAP. What do you do?',
+        situation: 'You need to preserve evidence before IT wipes the compromised system. The employee\'s manager wants the laptop cleaned and back in service ASAP. What is the BEST approach to balance evidence preservation and business continuity?',
         actions: [
           {
             id: 'a',
