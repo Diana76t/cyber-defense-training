@@ -54,6 +54,7 @@ export default function Dashboard() {
             <div className="space-y-3">
               <div className="flex justify-between"><span className="text-xs text-muted-foreground">Quizzes</span><span className="text-sm font-bold text-foreground">{progress.quizHistory.length}</span></div>
               <div className="flex justify-between"><span className="text-xs text-muted-foreground">Scenarios</span><span className="text-sm font-bold text-foreground">{progress.scenarioHistory.length}</span></div>
+              <div className="flex justify-between"><span className="text-xs text-muted-foreground">Incidents</span><span className="text-sm font-bold text-foreground">{(progress.incidentHistory ?? []).length}</span></div>
               <div className="flex justify-between"><span className="text-xs text-muted-foreground">Difficulties</span><span className="text-sm font-bold text-foreground">{completedDiffs.length}/3</span></div>
             </div>
           </motion.div>
