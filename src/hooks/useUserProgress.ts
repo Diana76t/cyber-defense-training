@@ -28,12 +28,22 @@ export interface IncidentResult {
   completedAt: string;
 }
 
+export interface SocAlertResult {
+  id: string;
+  socAlertId: string;
+  socAlertTitle: string;
+  score: number;
+  maxScore: number;
+  completedAt: string;
+}
+
 export interface UserProgress {
   username: string;
   totalScore: number;
   quizHistory: QuizResult[];
   scenarioHistory: ScenarioResult[];
   incidentHistory: IncidentResult[];
+  socAlertHistory: SocAlertResult[];
 }
 
 const STORAGE_KEY = 'cda_user_progress';
