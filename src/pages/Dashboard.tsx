@@ -1,19 +1,21 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Target, BookOpen, Trophy, TrendingUp, RotateCcw, Siren } from 'lucide-react';
+import { Target, BookOpen, Trophy, TrendingUp, RotateCcw, Siren, Search } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import { useUserProgress } from '@/hooks/useUserProgress';
 import { getLevelProgress, LEVELS } from '@/data/leaderboardData';
 import { SCENARIOS } from '@/data/scenarioData';
 import { INCIDENTS } from '@/data/incidentData';
+import { SOC_ALERTS } from '@/data/socAlertData';
 import { DIFFICULTY_CONFIG, type Difficulty } from '@/data/quizData';
 
 export default function Dashboard() {
-  const { progress, level, updateUsername, resetProgress, getCompletedDifficulties, getCompletedScenarioIds, getCompletedIncidentIds, getBestScoreForDifficulty, getBestScoreForScenario, getBestScoreForIncident } = useUserProgress();
+  const { progress, level, updateUsername, resetProgress, getCompletedDifficulties, getCompletedScenarioIds, getCompletedIncidentIds, getCompletedSocAlertIds, getBestScoreForDifficulty, getBestScoreForScenario, getBestScoreForIncident, getBestScoreForSocAlert } = useUserProgress();
   const levelProg = getLevelProgress(progress.totalScore);
   const completedDiffs = getCompletedDifficulties();
   const completedScenarios = getCompletedScenarioIds();
   const completedIncidents = getCompletedIncidentIds();
+  const completedSocAlerts = getCompletedSocAlertIds();
   const nextLevel = LEVELS.find(l => l.minScore > progress.totalScore);
 
   return (
@@ -55,7 +57,7 @@ export default function Dashboard() {
               <div className="flex justify-between"><span className="text-xs text-muted-foreground">Quizzes</span><span className="text-sm font-bold text-foreground">{progress.quizHistory.length}</span></div>
               <div className="flex justify-between"><span className="text-xs text-muted-foreground">Scenarios</span><span className="text-sm font-bold text-foreground">{progress.scenarioHistory.length}</span></div>
               <div className="flex justify-between"><span className="text-xs text-muted-foreground">Incidents</span><span className="text-sm font-bold text-foreground">{(progress.incidentHistory ?? []).length}</span></div>
-              <div className="flex justify-between"><span className="text-xs text-muted-foreground">Difficulties</span><span className="text-sm font-bold text-foreground">{completedDiffs.length}/3</span></div>
+              <div className="flex justify-between"><span className="text-xs text-muted-foreground">SOC Alerts</span><span className="text-sm font-bold text-foreground">{(progress.socAlertHistory ?? []).length}</span></div>
             </div>
           </motion.div>
         </div>
@@ -124,22 +126,47 @@ export default function Dashboard() {
             </div>
             <Link to="/incident" className="mt-4 inline-flex items-center gap-1 text-xs text-destructive hover:underline"><Siren className="h-3 w-3" /> Enter IR Lab →</Link>
           </div>
+
+          <div className="cyber-card rounded-lg p-6">
+            <div className="flex items-center gap-2 mb-4"><Search className="h-4 w-4 text-blue-400" /><h3 className="text-sm font-bold">SOC Alert Progress</h3></div>
+            <div className="space-y-3">
+              {SOC_ALERTS.slice(0, 4).map(alert => {
+                const best = getBestScoreForSocAlert(alert.id);
+                const pct = Math.round((best / alert.maxScore) * 100);
+                const done = completedSocAlerts.includes(alert.id);
+                return (
+                  <div key={alert.id}>
+                    <div className="flex justify-between text-xs mb-1">
+                      <span className="text-muted-foreground truncate max-w-[200px]">{alert.title}</span>
+                      <span className="text-foreground">{done ? `${best}/${alert.maxScore}` : 'Not started'}</span>
+                    </div>
+                    <div className="cyber-progress"><div className="cyber-progress-bar" style={{ width: `${pct}%` }} /></div>
+                  </div>
+                );
+              })}
+              {SOC_ALERTS.length > 4 && (
+                <p className="text-[10px] text-muted-foreground">+{SOC_ALERTS.length - 4} more alerts</p>
+              )}
+            </div>
+            <Link to="/soc" className="mt-4 inline-flex items-center gap-1 text-xs text-blue-400 hover:underline"><Search className="h-3 w-3" /> Enter SOC Lab →</Link>
+          </div>
         </div>
 
         {/* Recent Activity */}
         <div className="cyber-card rounded-lg p-6">
           <div className="flex items-center gap-2 mb-4"><TrendingUp className="h-4 w-4 text-primary" /><h3 className="text-sm font-bold">Recent Activity</h3></div>
-          {progress.quizHistory.length === 0 && progress.scenarioHistory.length === 0 && (progress.incidentHistory ?? []).length === 0 ? (
-            <p className="text-xs text-muted-foreground">No activity yet. Start a quiz, scenario, or incident to begin tracking your progress!</p>
+          {progress.quizHistory.length === 0 && progress.scenarioHistory.length === 0 && (progress.incidentHistory ?? []).length === 0 && (progress.socAlertHistory ?? []).length === 0 ? (
+            <p className="text-xs text-muted-foreground">No activity yet. Start a quiz, scenario, incident, or SOC alert to begin tracking your progress!</p>
           ) : (
             <div className="space-y-2 max-h-48 overflow-y-auto">
               {[...progress.quizHistory.map(r => ({ type: 'Quiz' as const, label: `${r.difficulty} Quiz`, score: r.score, max: r.maxScore, date: r.completedAt })),
                 ...progress.scenarioHistory.map(r => ({ type: 'Scenario' as const, label: r.scenarioTitle, score: r.score, max: r.maxScore, date: r.completedAt })),
                 ...(progress.incidentHistory ?? []).map(r => ({ type: 'Incident' as const, label: r.incidentTitle, score: r.score, max: r.maxScore, date: r.completedAt })),
+                ...(progress.socAlertHistory ?? []).map(r => ({ type: 'SOC' as const, label: r.socAlertTitle, score: r.score, max: r.maxScore, date: r.completedAt })),
               ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 10).map((item, i) => (
                 <div key={i} className="flex items-center justify-between text-xs py-1 border-b border-border/50">
                   <div className="flex items-center gap-2">
-                    <span className={item.type === 'Quiz' ? 'text-primary' : item.type === 'Scenario' ? 'text-accent' : 'text-destructive'}>{item.type === 'Quiz' ? '◆' : item.type === 'Scenario' ? '▲' : '⚠'}</span>
+                    <span className={item.type === 'Quiz' ? 'text-primary' : item.type === 'Scenario' ? 'text-accent' : item.type === 'SOC' ? 'text-blue-400' : 'text-destructive'}>{item.type === 'Quiz' ? '◆' : item.type === 'Scenario' ? '▲' : item.type === 'SOC' ? '🔍' : '⚠'}</span>
                     <span className="text-foreground capitalize">{item.label}</span>
                   </div>
                   <div className="flex items-center gap-3">
@@ -157,6 +184,7 @@ export default function Dashboard() {
           <Link to="/quiz" className="px-4 py-2 rounded bg-primary/10 border border-primary/20 text-primary text-xs font-bold hover:bg-primary/20 transition-colors">Quiz →</Link>
           <Link to="/lab" className="px-4 py-2 rounded bg-accent/10 border border-accent/20 text-accent text-xs font-bold hover:bg-accent/20 transition-colors">Sim Lab →</Link>
           <Link to="/incident" className="px-4 py-2 rounded bg-destructive/10 border border-destructive/20 text-destructive text-xs font-bold hover:bg-destructive/20 transition-colors"><Siren className="h-3 w-3 inline mr-1" />IR Lab →</Link>
+          <Link to="/soc" className="px-4 py-2 rounded bg-blue-400/10 border border-blue-400/20 text-blue-400 text-xs font-bold hover:bg-blue-400/20 transition-colors"><Search className="h-3 w-3 inline mr-1" />SOC Lab →</Link>
           <Link to="/leaderboard" className="px-4 py-2 rounded bg-warning/10 border border-warning/20 text-warning text-xs font-bold hover:bg-warning/20 transition-colors"><Trophy className="h-3 w-3 inline mr-1" />Leaderboard →</Link>
         </div>
       </div>

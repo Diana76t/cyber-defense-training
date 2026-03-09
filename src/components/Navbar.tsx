@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Shield, Menu, X, BarChart3, BookOpen, Target, Trophy, LayoutDashboard, Siren } from 'lucide-react';
+import { Shield, Menu, X, BarChart3, BookOpen, Target, Trophy, LayoutDashboard, Siren, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const NAV_ITEMS = [
@@ -8,6 +8,7 @@ const NAV_ITEMS = [
   { path: '/quiz', label: 'Quiz', icon: Target },
   { path: '/lab', label: 'Sim Lab', icon: BookOpen },
   { path: '/incident', label: 'IR Lab', icon: Siren },
+  { path: '/soc', label: 'SOC Lab', icon: Search },
   { path: '/tips', label: 'Tips', icon: BarChart3 },
   { path: '/leaderboard', label: 'Leaderboard', icon: Trophy },
 ];

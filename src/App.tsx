@@ -12,6 +12,8 @@ import ScenarioPage from "./pages/ScenarioPage";
 import Leaderboard from "./pages/Leaderboard";
 import IncidentLab from "./pages/IncidentLab";
 import IncidentPage from "./pages/IncidentPage";
+import SocAlertLab from "./pages/SocAlertLab";
+import SocAlertPage from "./pages/SocAlertPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +33,8 @@ const App = () => (
           <Route path="/lab/:scenarioId" element={<ScenarioPage />} />
           <Route path="/incident" element={<IncidentLab />} />
           <Route path="/incident/:incidentId" element={<IncidentPage />} />
+          <Route path="/soc" element={<SocAlertLab />} />
+          <Route path="/soc/:alertId" element={<SocAlertPage />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -28,12 +28,22 @@ export interface IncidentResult {
   completedAt: string;
 }
 
+export interface SocAlertResult {
+  id: string;
+  socAlertId: string;
+  socAlertTitle: string;
+  score: number;
+  maxScore: number;
+  completedAt: string;
+}
+
 export interface UserProgress {
   username: string;
   totalScore: number;
   quizHistory: QuizResult[];
   scenarioHistory: ScenarioResult[];
   incidentHistory: IncidentResult[];
+  socAlertHistory: SocAlertResult[];
 }
 
 const STORAGE_KEY = 'cda_user_progress';
@@ -44,6 +54,7 @@ const DEFAULT_PROGRESS: UserProgress = {
   quizHistory: [],
   scenarioHistory: [],
   incidentHistory: [],
+  socAlertHistory: [],
 };
 
 function loadProgress(): UserProgress {
@@ -108,6 +119,17 @@ export function useUserProgress() {
     });
   }, [update]);
 
+  const addSocAlertResult = useCallback((result: Omit<SocAlertResult, 'id'>) => {
+    update((p) => {
+      const newResult: SocAlertResult = { ...result, id: `soc-${Date.now()}` };
+      return {
+        ...p,
+        totalScore: p.totalScore + result.score,
+        socAlertHistory: [newResult, ...(p.socAlertHistory ?? [])],
+      };
+    });
+  }, [update]);
+
   const resetProgress = useCallback(() => {
     const fresh = { ...DEFAULT_PROGRESS };
     saveProgress(fresh);
@@ -130,6 +152,10 @@ export function useUserProgress() {
     return [...new Set((progress.incidentHistory ?? []).map((r) => r.incidentId))];
   };
 
+  const getCompletedSocAlertIds = (): string[] => {
+    return [...new Set((progress.socAlertHistory ?? []).map((r) => r.socAlertId))];
+  };
+
   const getBestScoreForDifficulty = (difficulty: Difficulty): number => {
     const results = progress.quizHistory.filter((r) => r.difficulty === difficulty);
     if (!results.length) return 0;
@@ -148,6 +174,12 @@ export function useUserProgress() {
     return Math.max(...results.map((r) => r.score));
   };
 
+  const getBestScoreForSocAlert = (socAlertId: string): number => {
+    const results = (progress.socAlertHistory ?? []).filter((r) => r.socAlertId === socAlertId);
+    if (!results.length) return 0;
+    return Math.max(...results.map((r) => r.score));
+  };
+
   return {
     progress,
     level,
@@ -155,12 +187,15 @@ export function useUserProgress() {
     addQuizResult,
     addScenarioResult,
     addIncidentResult,
+    addSocAlertResult,
     resetProgress,
     getCompletedDifficulties,
     getCompletedScenarioIds,
     getCompletedIncidentIds,
+    getCompletedSocAlertIds,
     getBestScoreForDifficulty,
     getBestScoreForScenario,
     getBestScoreForIncident,
+    getBestScoreForSocAlert,
   };
 }
