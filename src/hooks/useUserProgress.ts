@@ -54,6 +54,7 @@ const DEFAULT_PROGRESS: UserProgress = {
   quizHistory: [],
   scenarioHistory: [],
   incidentHistory: [],
+  socAlertHistory: [],
 };
 
 function loadProgress(): UserProgress {
