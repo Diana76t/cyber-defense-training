@@ -162,10 +162,11 @@ export default function Dashboard() {
               {[...progress.quizHistory.map(r => ({ type: 'Quiz' as const, label: `${r.difficulty} Quiz`, score: r.score, max: r.maxScore, date: r.completedAt })),
                 ...progress.scenarioHistory.map(r => ({ type: 'Scenario' as const, label: r.scenarioTitle, score: r.score, max: r.maxScore, date: r.completedAt })),
                 ...(progress.incidentHistory ?? []).map(r => ({ type: 'Incident' as const, label: r.incidentTitle, score: r.score, max: r.maxScore, date: r.completedAt })),
+                ...(progress.socAlertHistory ?? []).map(r => ({ type: 'SOC' as const, label: r.socAlertTitle, score: r.score, max: r.maxScore, date: r.completedAt })),
               ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 10).map((item, i) => (
                 <div key={i} className="flex items-center justify-between text-xs py-1 border-b border-border/50">
                   <div className="flex items-center gap-2">
-                    <span className={item.type === 'Quiz' ? 'text-primary' : item.type === 'Scenario' ? 'text-accent' : 'text-destructive'}>{item.type === 'Quiz' ? '◆' : item.type === 'Scenario' ? '▲' : '⚠'}</span>
+                    <span className={item.type === 'Quiz' ? 'text-primary' : item.type === 'Scenario' ? 'text-accent' : item.type === 'SOC' ? 'text-blue-400' : 'text-destructive'}>{item.type === 'Quiz' ? '◆' : item.type === 'Scenario' ? '▲' : item.type === 'SOC' ? '🔍' : '⚠'}</span>
                     <span className="text-foreground capitalize">{item.label}</span>
                   </div>
                   <div className="flex items-center gap-3">
