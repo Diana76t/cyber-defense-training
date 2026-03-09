@@ -103,6 +103,27 @@ export default function Dashboard() {
             </div>
             <Link to="/lab" className="mt-4 inline-flex items-center gap-1 text-xs text-primary hover:underline"><BookOpen className="h-3 w-3" /> Enter Sim Lab →</Link>
           </div>
+
+          <div className="cyber-card rounded-lg p-6">
+            <div className="flex items-center gap-2 mb-4"><Siren className="h-4 w-4 text-destructive" /><h3 className="text-sm font-bold">Incident Response Progress</h3></div>
+            <div className="space-y-3">
+              {INCIDENTS.map(inc => {
+                const best = getBestScoreForIncident(inc.id);
+                const pct = Math.round((best / inc.maxScore) * 100);
+                const done = completedIncidents.includes(inc.id);
+                return (
+                  <div key={inc.id}>
+                    <div className="flex justify-between text-xs mb-1">
+                      <span className="text-muted-foreground">{inc.title}</span>
+                      <span className="text-foreground">{done ? `${best}/${inc.maxScore}` : 'Not started'}</span>
+                    </div>
+                    <div className="cyber-progress"><div className="cyber-progress-bar" style={{ width: `${pct}%` }} /></div>
+                  </div>
+                );
+              })}
+            </div>
+            <Link to="/incident" className="mt-4 inline-flex items-center gap-1 text-xs text-destructive hover:underline"><Siren className="h-3 w-3" /> Enter IR Lab →</Link>
+          </div>
         </div>
 
         {/* Recent Activity */}
