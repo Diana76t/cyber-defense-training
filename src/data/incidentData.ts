@@ -97,7 +97,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir1-step2',
         stepNumber: 2,
         title: 'Scope Assessment',
-        situation: 'The account is now disabled. Logs show the attacker accessed: email inbox, SharePoint /HR-Documents/, and attempted (failed) to access the finance portal. Which systems need IMMEDIATE investigation?',
+        situation: 'The account is now disabled. Logs show the attacker accessed: email inbox, SharePoint /HR-Documents/ (containing employee PII), and attempted (failed) to access the finance portal. Which scope of investigation is MOST appropriate?',
         actions: [
           {
             id: 'a',
