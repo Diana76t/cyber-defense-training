@@ -30,7 +30,8 @@ export const LEVELS = [
 ];
 
 export function getLevelForScore(score: number) {
-  return LEVELS.findLast((l) => score >= l.minScore) ?? LEVELS[0];
+  const filtered = LEVELS.filter((l) => score >= l.minScore);
+  return filtered.length > 0 ? filtered[filtered.length - 1] : LEVELS[0];
 }
 
 export function getLevelProgress(score: number): number {
