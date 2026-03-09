@@ -261,7 +261,7 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's2-step3',
         stepNumber: 3,
         title: 'Recovery Decision',
-        situation: 'IT asks about your backups. What\'s the safest backup scenario for ransomware recovery?',
+        situation: 'IT asks about your backups. Which backup strategy provides the BEST protection against ransomware?',
         choices: [
           {
             id: 'a',
