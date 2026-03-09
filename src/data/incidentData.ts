@@ -415,7 +415,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir3-step3',
         stepNumber: 3,
         title: 'Source Code Integrity',
-        situation: 'The malware had access during business hours for an estimated 3 hours before detection. The code repository shows 2 commits made during that window by the developer. How do you verify code integrity?',
+        situation: 'The malware had access during business hours for an estimated 3 hours before detection. The code repository shows 2 commits made during that window by the developer. What is the MOST rigorous way to verify code integrity?',
         actions: [
           {
             id: 'a',
