@@ -788,9 +788,9 @@ export const INCIDENTS: Incident[] = [
         actions: [
           {
             id: 'a',
-            text: 'Physical locks on USB ports company-wide',
+            text: 'Install physical locks on all USB ports company-wide',
             isCorrect: false,
-            feedback: '⚠️ USB locks help but Mike used cloud services and email — not USB. Single-vector prevention doesn\'t address multi-channel exfiltration. A comprehensive data protection strategy requires DLP + access controls + monitoring.',
+            feedback: '⚠️ USB locks are irrelevant here — Mike used cloud services and email, not USB drives. Single-vector prevention doesn\'t address multi-channel exfiltration. A comprehensive data protection strategy requires DLP + access controls + monitoring across all channels.',
             points: 15,
           },
           {
