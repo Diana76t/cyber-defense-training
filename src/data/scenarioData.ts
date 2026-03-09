@@ -469,7 +469,7 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's4-step2',
         stepNumber: 2,
         title: 'Verifying the Domain',
-        situation: 'You check the URL and see: https://firstnationalbank-secure.com\n\nYour actual bank\'s domain is: firstnationalbank.com\n\nThe SSL certificate shows "firstnationalbank-secure.com is secure." What do you do?',
+        situation: 'You check the URL and see: https://firstnationalbank-secure.com\n\nYour actual bank\'s domain is: firstnationalbank.com\n\nThe SSL certificate shows "firstnationalbank-secure.com is secure." What is the BEST action to take?',
         choices: [
           {
             id: 'a',
