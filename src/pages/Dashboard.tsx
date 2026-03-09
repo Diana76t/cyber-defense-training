@@ -126,6 +126,30 @@ export default function Dashboard() {
             </div>
             <Link to="/incident" className="mt-4 inline-flex items-center gap-1 text-xs text-destructive hover:underline"><Siren className="h-3 w-3" /> Enter IR Lab →</Link>
           </div>
+
+          <div className="cyber-card rounded-lg p-6">
+            <div className="flex items-center gap-2 mb-4"><Search className="h-4 w-4 text-blue-400" /><h3 className="text-sm font-bold">SOC Alert Progress</h3></div>
+            <div className="space-y-3">
+              {SOC_ALERTS.slice(0, 4).map(alert => {
+                const best = getBestScoreForSocAlert(alert.id);
+                const pct = Math.round((best / alert.maxScore) * 100);
+                const done = completedSocAlerts.includes(alert.id);
+                return (
+                  <div key={alert.id}>
+                    <div className="flex justify-between text-xs mb-1">
+                      <span className="text-muted-foreground truncate max-w-[200px]">{alert.title}</span>
+                      <span className="text-foreground">{done ? `${best}/${alert.maxScore}` : 'Not started'}</span>
+                    </div>
+                    <div className="cyber-progress"><div className="cyber-progress-bar" style={{ width: `${pct}%` }} /></div>
+                  </div>
+                );
+              })}
+              {SOC_ALERTS.length > 4 && (
+                <p className="text-[10px] text-muted-foreground">+{SOC_ALERTS.length - 4} more alerts</p>
+              )}
+            </div>
+            <Link to="/soc" className="mt-4 inline-flex items-center gap-1 text-xs text-blue-400 hover:underline"><Search className="h-3 w-3" /> Enter SOC Lab →</Link>
+          </div>
         </div>
 
         {/* Recent Activity */}
