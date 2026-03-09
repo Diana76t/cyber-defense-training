@@ -169,7 +169,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir1-step4',
         stepNumber: 4,
         title: 'Stakeholder Notification',
-        situation: 'Evidence shows the HR Documents folder contained personal data of 340 employees (names, salaries, home addresses). Your company operates in the EU. What are your notification obligations?',
+        situation: 'Evidence shows the HR Documents folder contained personal data of 340 employees (names, salaries, home addresses). Your company operates in the EU under GDPR. What are your COMPLETE notification obligations?',
         actions: [
           {
             id: 'a',
