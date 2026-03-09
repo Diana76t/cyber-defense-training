@@ -174,6 +174,12 @@ export function useUserProgress() {
     return Math.max(...results.map((r) => r.score));
   };
 
+  const getBestScoreForSocAlert = (socAlertId: string): number => {
+    const results = (progress.socAlertHistory ?? []).filter((r) => r.socAlertId === socAlertId);
+    if (!results.length) return 0;
+    return Math.max(...results.map((r) => r.score));
+  };
+
   return {
     progress,
     level,
