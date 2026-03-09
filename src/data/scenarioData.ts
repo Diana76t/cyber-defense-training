@@ -93,9 +93,9 @@ Failure to respond will result in loss of access and pending transactions being 
           {
             id: 'd',
             text: 'Open a new browser tab and navigate to PayPal.com directly to check your account',
-            isCorrect: true,
-            feedback: '✅ Smart! Going directly to the official website completely bypasses any malicious links. This is always the right approach — never click links in suspicious emails.',
-            points: 90,
+            isCorrect: false,
+            feedback: '⚠️ Going to the official site is safer than clicking the link, but you missed the key analysis step. Always examine the sender address first — "paypa1-support.com" uses a "1" instead of "l," confirming it\'s phishing before you take any action.',
+            points: 50,
           },
         ],
       },
