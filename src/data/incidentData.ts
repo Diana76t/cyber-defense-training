@@ -379,7 +379,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir3-step2',
         stepNumber: 2,
         title: 'Credential Compromise Assessment',
-        situation: 'The EDR confirms LSASS was read — cached credentials were almost certainly harvested. The developer has SSH access to 12 production servers and write access to the main code repository. What\'s the immediate risk?',
+        situation: 'The EDR confirms LSASS was read — cached credentials were almost certainly harvested. The developer has SSH access to 12 production servers and write access to the main code repository. What BEST describes the immediate risk?',
         actions: [
           {
             id: 'a',
