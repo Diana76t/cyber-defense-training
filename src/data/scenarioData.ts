@@ -365,9 +365,9 @@ Failure to respond will result in loss of access and pending transactions being 
           },
           {
             id: 'c',
-            text: 'Enable 2FA only',
+            text: 'Enable 2FA only — that should prevent future unauthorized access',
             isCorrect: false,
-            feedback: '⚠️ Enabling 2FA is essential, but you also need to sign out all active sessions (the attacker may still be connected) and audit what they accessed during those 8 minutes.',
+            feedback: '⚠️ 2FA alone is incomplete. The attacker may still have an active session right now — 2FA only protects future logins, not existing sessions. You must also sign out all sessions and audit what was accessed during those 8 minutes.',
             points: 50,
           },
           {
