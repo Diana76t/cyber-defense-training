@@ -225,7 +225,7 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's2-step2',
         stepNumber: 2,
         title: 'Reporting to IT Security',
-        situation: 'You\'ve disconnected the machine. IT Security is on the phone. What information should you give them first?',
+        situation: 'You\'ve disconnected the machine. IT Security is on the phone. What is the MOST useful information to provide them FIRST?',
         choices: [
           {
             id: 'a',
@@ -261,7 +261,7 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's2-step3',
         stepNumber: 3,
         title: 'Recovery Decision',
-        situation: 'IT asks about your backups. What\'s the safest backup scenario for ransomware recovery?',
+        situation: 'IT asks about your backups. Which backup strategy provides the BEST protection against ransomware?',
         choices: [
           {
             id: 'a',
@@ -469,7 +469,7 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's4-step2',
         stepNumber: 2,
         title: 'Verifying the Domain',
-        situation: 'You check the URL and see: https://firstnationalbank-secure.com\n\nYour actual bank\'s domain is: firstnationalbank.com\n\nThe SSL certificate shows "firstnationalbank-secure.com is secure." What do you do?',
+        situation: 'You check the URL and see: https://firstnationalbank-secure.com\n\nYour actual bank\'s domain is: firstnationalbank.com\n\nThe SSL certificate shows "firstnationalbank-secure.com is secure." What is the BEST action to take?',
         choices: [
           {
             id: 'a',
@@ -591,7 +591,7 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's5-step2',
         stepNumber: 2,
         title: 'Escalating Pressure',
-        situation: 'You say you\'ll call back. The caller says: "There\'s no time — every second of delay means more data is being stolen. Your manager Sarah will hear about your non-cooperation during a security incident. I just need your password for 5 minutes."\n\nHow do you respond?',
+        situation: 'You say you\'ll call back. The caller says: "There\'s no time — every second of delay means more data is being stolen. Your manager Sarah will hear about your non-cooperation during a security incident. I just need your password for 5 minutes."\n\nWhat is the BEST way to handle this pressure?',
         choices: [
           {
             id: 'a',
@@ -627,7 +627,7 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's5-step3',
         stepNumber: 3,
         title: 'Reporting the Incident',
-        situation: 'You hung up and verified — IT confirms they made no such call. You\'ve been targeted by a vishing (voice phishing) attack. What should you do now?',
+        situation: 'You hung up and verified — IT confirms they made no such call. You\'ve been targeted by a vishing (voice phishing) attack. What is the BEST next step?',
         choices: [
           {
             id: 'a',
