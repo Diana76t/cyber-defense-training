@@ -12,6 +12,8 @@ import ScenarioPage from "./pages/ScenarioPage";
 import Leaderboard from "./pages/Leaderboard";
 import IncidentLab from "./pages/IncidentLab";
 import IncidentPage from "./pages/IncidentPage";
+import SocAlertLab from "./pages/SocAlertLab";
+import SocAlertPage from "./pages/SocAlertPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
