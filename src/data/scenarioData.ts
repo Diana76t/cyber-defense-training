@@ -311,7 +311,7 @@ Failure to respond will result in loss of access and pending transactions being 
         id: 's3-step1',
         stepNumber: 1,
         title: 'The Security Alert',
-        situation: 'Your phone shows: "New sign-in to your account from Bucharest, Romania (IP: 185.220.xxx.xxx) at 3:14 AM. If this wasn\'t you, click here to secure your account."\n\nYou\'ve never been to Romania. What do you do?',
+        situation: 'Your phone shows: "New sign-in to your account from Bucharest, Romania (IP: 185.220.xxx.xxx) at 3:14 AM. If this wasn\'t you, click here to secure your account."\n\nYou\'ve never been to Romania. What is the SAFEST immediate response?',
         choices: [
           {
             id: 'a',
