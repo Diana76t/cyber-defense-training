@@ -625,7 +625,7 @@ export const INCIDENTS: Incident[] = [
         id: 'ir5-step2',
         stepNumber: 2,
         title: 'Customer Risk Assessment',
-        situation: 'The breach includes hashed passwords. Initial analysis shows MD5 hashing was used (known to be weak). What is the immediate customer risk and required action?',
+        situation: 'The breach includes hashed passwords. Initial analysis shows MD5 hashing was used (known to be trivially crackable). What is the BEST immediate action to protect customers?',
         actions: [
           {
             id: 'a',
