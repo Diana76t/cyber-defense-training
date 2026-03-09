@@ -187,12 +187,15 @@ export function useUserProgress() {
     addQuizResult,
     addScenarioResult,
     addIncidentResult,
+    addSocAlertResult,
     resetProgress,
     getCompletedDifficulties,
     getCompletedScenarioIds,
     getCompletedIncidentIds,
+    getCompletedSocAlertIds,
     getBestScoreForDifficulty,
     getBestScoreForScenario,
     getBestScoreForIncident,
+    getBestScoreForSocAlert,
   };
 }

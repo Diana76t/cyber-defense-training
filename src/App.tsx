@@ -33,6 +33,8 @@ const App = () => (
           <Route path="/lab/:scenarioId" element={<ScenarioPage />} />
           <Route path="/incident" element={<IncidentLab />} />
           <Route path="/incident/:incidentId" element={<IncidentPage />} />
+          <Route path="/soc" element={<SocAlertLab />} />
+          <Route path="/soc/:alertId" element={<SocAlertPage />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

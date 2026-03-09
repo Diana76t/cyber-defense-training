@@ -8,6 +8,7 @@ const NAV_ITEMS = [
   { path: '/quiz', label: 'Quiz', icon: Target },
   { path: '/lab', label: 'Sim Lab', icon: BookOpen },
   { path: '/incident', label: 'IR Lab', icon: Siren },
+  { path: '/soc', label: 'SOC Lab', icon: Search },
   { path: '/tips', label: 'Tips', icon: BarChart3 },
   { path: '/leaderboard', label: 'Leaderboard', icon: Trophy },
 ];
