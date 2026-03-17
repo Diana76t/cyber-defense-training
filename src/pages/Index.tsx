@@ -140,6 +140,41 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Who Is This For */}
+      <section className="py-20 relative border-b border-border">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <h2 className="text-2xl font-bold text-foreground mb-4">WHO IS THIS PLATFORM FOR?</h2>
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              This platform is designed for:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="cyber-card rounded-lg p-5">
+                <div className="text-primary font-display text-xs font-bold mb-2">STUDENTS</div>
+                <p className="text-xs text-muted-foreground">Learning cybersecurity fundamentals</p>
+              </div>
+              <div className="cyber-card rounded-lg p-5">
+                <div className="text-primary font-display text-xs font-bold mb-2">BEGINNERS</div>
+                <p className="text-xs text-muted-foreground">Exploring SOC and threat analysis</p>
+              </div>
+              <div className="cyber-card rounded-lg p-5">
+                <div className="text-primary font-display text-xs font-bold mb-2">PROFESSIONALS</div>
+                <p className="text-xs text-muted-foreground">Improving their security awareness</p>
+              </div>
+            </div>
+            <p className="text-muted-foreground text-sm mt-8">
+              No prior experience required — just start training.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Features */}
       <section className="py-20 relative">
         <div className="container mx-auto px-4">
