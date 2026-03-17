@@ -106,6 +106,42 @@ export default function Index() {
         </div>
       </section>
 
+      {/* About */}
+      <section className="py-20 relative border-b border-border">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <h2 className="text-2xl font-bold text-foreground mb-4">ABOUT THIS PLATFORM</h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Cyber Defense Academy is a hands-on cybersecurity awareness training platform
+              designed for professionals at every level. Through realistic phishing quizzes,
+              attack simulations, incident response labs, and SOC alert triage exercises,
+              you'll build the practical skills needed to identify, contain, and respond to
+              modern cyber threats.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
+              <div className="cyber-card rounded-lg p-5">
+                <div className="text-primary font-display text-xs font-bold mb-2">LEARN</div>
+                <p className="text-xs text-muted-foreground">Explore expert-curated tips and real-world attack patterns to sharpen your threat awareness.</p>
+              </div>
+              <div className="cyber-card rounded-lg p-5">
+                <div className="text-primary font-display text-xs font-bold mb-2">PRACTICE</div>
+                <p className="text-xs text-muted-foreground">Face interactive simulations — from phishing emails to ransomware incidents — in a safe environment.</p>
+              </div>
+              <div className="cyber-card rounded-lg p-5">
+                <div className="text-primary font-display text-xs font-bold mb-2">PROVE</div>
+                <p className="text-xs text-muted-foreground">Track your progress, earn points, and climb the leaderboard from Recruit to Elite defender.</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Features */}
       <section className="py-20 relative">
         <div className="container mx-auto px-4">
