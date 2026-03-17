@@ -119,23 +119,21 @@ export default function Index() {
             <h2 className="text-2xl font-bold text-foreground mb-4">ABOUT THIS PLATFORM</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Cyber Defense Academy is a hands-on cybersecurity awareness training platform
-              designed for professionals at every level. Through realistic phishing quizzes,
-              attack simulations, incident response labs, and SOC alert triage exercises,
-              you'll build the practical skills needed to identify, contain, and respond to
-              modern cyber threats.
+              designed to help users understand and respond to modern cyber threats through
+              realistic simulations, phishing exercises, and SOC-style investigations.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
               <div className="cyber-card rounded-lg p-5">
                 <div className="text-primary font-display text-xs font-bold mb-2">LEARN</div>
-                <p className="text-xs text-muted-foreground">Explore expert-curated tips and real-world attack patterns to sharpen your threat awareness.</p>
+                <p className="text-xs text-muted-foreground">Explore cybersecurity concepts, attack patterns, and awareness tips.</p>
               </div>
               <div className="cyber-card rounded-lg p-5">
                 <div className="text-primary font-display text-xs font-bold mb-2">PRACTICE</div>
-                <p className="text-xs text-muted-foreground">Face interactive simulations — from phishing emails to ransomware incidents — in a safe environment.</p>
+                <p className="text-xs text-muted-foreground">Interact with phishing quizzes, attack simulations, and investigation scenarios.</p>
               </div>
               <div className="cyber-card rounded-lg p-5">
                 <div className="text-primary font-display text-xs font-bold mb-2">PROVE</div>
-                <p className="text-xs text-muted-foreground">Track your progress, earn points, and climb the leaderboard from Recruit to Elite defender.</p>
+                <p className="text-xs text-muted-foreground">Track progress, improve detection skills, and demonstrate practical understanding.</p>
               </div>
             </div>
           </motion.div>
