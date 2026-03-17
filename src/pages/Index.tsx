@@ -122,7 +122,6 @@ export default function Index() {
               designed to help users identify, analyze, and respond to modern cyber threats
               through realistic simulations, phishing exercises, and SOC-style investigations.
             </p>
-            </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
               <div className="cyber-card rounded-lg p-5">
                 <div className="text-primary font-display text-xs font-bold mb-2">LEARN</div>
