@@ -119,10 +119,8 @@ export default function Index() {
             <h2 className="text-2xl font-bold text-foreground mb-4">ABOUT THIS PLATFORM</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Cyber Defense Academy is a hands-on cybersecurity awareness training platform
-              designed for professionals at every level. Through realistic phishing quizzes,
-              attack simulations, incident response labs, and SOC alert triage exercises,
-              you'll build the practical skills needed to identify, contain, and respond to
-              modern cyber threats.
+              designed to help users understand and respond to modern cyber threats through
+              realistic simulations, phishing exercises, and SOC-style investigations.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
               <div className="cyber-card rounded-lg p-5">
