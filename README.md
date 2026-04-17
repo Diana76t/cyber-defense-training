@@ -1,8 +1,8 @@
 Cyber Defense Training Platform 🛡️
 ​An interactive, web-based educational platform designed to provide hands-on cybersecurity training through immersive scenarios and practical labs.
-​🚀 Overview
+​🚀 Overview:
 ​Cyber Defense Training is a project developed to bridge the gap between theoretical security concepts and practical application. It features a modern interface where users can explore various cybersecurity domains and test their skills in simulated environments.
-✨ Key Features
+✨ Key Features:
 ​Interactive Learning Scenarios: Real-world security challenges to enhance decision-making.
 ​Hands-on Labs: Practical exercises focused on defensive and offensive security basics.
 ​User-Centric Design: Developed with a focus on ease of use and modern UI/UX principles.
@@ -11,7 +11,7 @@ Cyber Defense Training Platform 🛡️
 ​Frontend: React / Vite (via Lovable)
 ​Styling: Tailwind CSS / Shadcn UI
 ​Deployment: Integrated with GitHub Actions
-​📖 How to Use
+​📖 How to Use:
 1.Clone the repository:
 git clone https://github.com/Diana76t/cyber-defense-training.git
 
